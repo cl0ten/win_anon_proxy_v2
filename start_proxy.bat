@@ -1,1 +1,2 @@
-Powershell.exe -ExecutionPolicy Bypass -File .\src\bootstrap.ps1 
+@echo off
+Powershell.exe -Command "Start-Process Powershell.exe -ArgumentList '-ExecutionPolicy Bypass -File ""%cd%\src\bootstrap.ps1""' -Verb RunAs"

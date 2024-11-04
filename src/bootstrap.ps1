@@ -171,10 +171,10 @@ Write-Host  "=================================================="
 Write-Host  "`nThe script sets up a proxy to route traffic through the Anyone network.`n`nDNS requests are blocked from directly reaching external servers by applying DNS firewall redirection."
 
 
-$useFirewall = Read-Host "Do you want to apply the DNS firewall redirection? (Y/N)"
-if ($useFirewall -match '^(Y|y)$') {
+# $useFirewall = Read-Host "Do you want to apply the DNS firewall redirection? (Y/N)"
+# if ($useFirewall -match '^(Y|y)$') {
     Configure-FirewallRules -EnableRules $true
-}
+# }
 
 try {
     Start-AnonProxy

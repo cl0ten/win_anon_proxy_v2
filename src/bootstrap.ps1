@@ -1,3 +1,10 @@
+
+##
+## TODO
+# fix geoip files locations
+# fix anonrc location and/or change to an individual cfg
+#
+
 $tempFolder = [System.IO.Path]::GetTempPath()
 $anonPath = "$PSScriptRoot\anon.exe"
 $anonrcTempPath = Join-Path $tempFolder "anonrc"

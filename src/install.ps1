@@ -18,8 +18,6 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 [System.IO.Compression.ZipFile]::ExtractToDirectory($anonZipPath, $srcPath)
 
 $extractedAnonPath = [System.IO.Path]::Combine($srcPath, "anon.exe")
-Move-Item -Path (Join-Path $desktopPath "anon-live-windows-signed-amd64/anon.exe") -Destination $extractedAnonPath
-Remove-Item -Recurse -Force (Join-Path $desktopPath "anon-live-windows-signed-amd64")
 Remove-Item -Path $anonZipPath
 
 Invoke-WebRequest -Uri $bootstrapScriptUrl -OutFile (Join-Path $srcPath "bootstrap.ps1")

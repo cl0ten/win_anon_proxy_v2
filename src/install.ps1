@@ -6,7 +6,7 @@ $batchFileUrl = "https://raw.githubusercontent.com/cl0ten/win_anon_proxy_v2/refs
 $desktopPath = [System.IO.Path]::Combine([System.Environment]::GetFolderPath("Desktop"), "Anyone")
 $srcPath = [System.IO.Path]::Combine($desktopPath, "src")
 $anonZipPath = [System.IO.Path]::Combine($srcPath, "anon-temp.zip")
-$shortcutPath = [System.IO.Path]::Combine($desktopPath, "Anyone Network Proxy.lnk")
+$shortcutPath = [System.IO.Path]::Combine($desktopPath, "Anyone Network Proxy Script.lnk")
 
 if (!(Test-Path -Path $srcPath)) {
     New-Item -ItemType Directory -Path $srcPath | Out-Null

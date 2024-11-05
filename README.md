@@ -9,7 +9,7 @@ This repository contains the installer script and source files for **Anyone**, w
 Copy and paste the following command into a PowerShell window, then press **Enter**:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/cl0ten/win_anon_proxy_v2/refs/heads/main/install.ps1' -OutFile '$env:TEMP\install.ps1'; & $env:TEMP\install.ps1"
+powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/cl0ten/win_anon_proxy_v2/refs/heads/main/src/install.ps1' -OutFile '$env:TEMP\install.ps1'; & $env:TEMP\install.ps1"
 ```
 
 ## Usage

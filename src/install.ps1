@@ -1,4 +1,3 @@
-
 $anonZipUrl = "https://github.com/anyone-protocol/ator-protocol/releases/download/v0.4.9.7/anon-live-windows-signed-amd64.zip"
 $bootstrapScriptUrl = "https://raw.githubusercontent.com/cl0ten/win_anon_proxy_v2/refs/heads/main/src/bootstrap.ps1"
 $iconUrl = "https://raw.githubusercontent.com/cl0ten/win_anon_proxy_v2/refs/heads/main/src/icon.ico"
@@ -6,7 +5,7 @@ $batchFileUrl = "https://raw.githubusercontent.com/cl0ten/win_anon_proxy_v2/refs
 
 $desktopPath = [System.IO.Path]::Combine([System.Environment]::GetFolderPath("Desktop"), "Anyone")
 $srcPath = [System.IO.Path]::Combine($desktopPath, "src")
-$anonZipPath = [System.IO.Path]::Combine($desktopPath, "anon-temp.zip")
+$anonZipPath = [System.IO.Path]::Combine($srcPath, "anon-temp.zip")
 $shortcutPath = [System.IO.Path]::Combine($desktopPath, "Anyone Network Proxy.lnk")
 
 if (!(Test-Path -Path $srcPath)) {
@@ -16,7 +15,7 @@ if (!(Test-Path -Path $srcPath)) {
 Write-Output "Downloading files..."
 Invoke-WebRequest -Uri $anonZipUrl -OutFile $anonZipPath
 Add-Type -AssemblyName System.IO.Compression.FileSystem
-[System.IO.Compression.ZipFile]::ExtractToDirectory($anonZipPath, $desktopPath)
+[System.IO.Compression.ZipFile]::ExtractToDirectory($anonZipPath, $srcPath)
 
 $extractedAnonPath = [System.IO.Path]::Combine($srcPath, "anon.exe")
 Move-Item -Path (Join-Path $desktopPath "anon-live-windows-signed-amd64/anon.exe") -Destination $extractedAnonPath
